@@ -1,0 +1,15 @@
+name: hello
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+       - uses: actions/checkout@v2
+         with:
+           fetch-depth: 50
+       - name: Echo
+         run: |
+           echo "Workflow  = "${{ github.workflow }}
+      
